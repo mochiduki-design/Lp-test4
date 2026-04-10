@@ -208,7 +208,7 @@ export default function Home() {
           {/* CTA上部テキスト */}
           <div className="text-center mb-3">
             <p className="text-xs text-primary font-medium">
-              ＼ 今なら初回限定特典あり ／
+              ＼ 初回限定特典あり ／
             </p>
           </div>
           
@@ -447,7 +447,7 @@ export default function Home() {
           <div className="bg-gradient-to-br from-slate-50 to-primary/5 rounded-2xl p-6 text-center border border-slate-200">
             {/* 特典テキスト */}
             <p className="text-xs text-primary font-medium mb-4">
-              ＼ 今なら初回限定特典あり ／
+              ＼ 初回限定特典あり ／
             </p>
             
             <LineCTA />
@@ -626,7 +626,7 @@ export default function Home() {
             <div className="relative">
               {/* 特典テキスト */}
               <p className="text-xs opacity-90 mb-4">
-                ＼ 今なら初回限定特典あり ／
+                ＼ 初回限定特典あり ／
               </p>
               
               {/* CTAボタン */}
