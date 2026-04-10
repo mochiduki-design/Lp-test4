@@ -205,13 +205,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 行動を促す一文 */}
-          <div className="text-center mb-4">
-            <p className="text-sm text-slate-700 font-medium">
-              1年後、<span className="text-primary">「あの時行動してよかった」</span>と思える自分へ。
-            </p>
-            <p className="text-xs text-slate-500 mt-1">
-              たった30秒の登録が、あなたの肌を変える第一歩です。
+          {/* CTA上部テキスト */}
+          <div className="text-center mb-3">
+            <p className="text-xs text-primary font-medium">
+              ＼ 今なら初回限定特典あり ／
             </p>
           </div>
           
@@ -225,18 +222,18 @@ export default function Home() {
                 <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
                 </svg>
-                <span>今すぐ無料で相談する</span>
+                <span>LINEで無料相談する（30秒）</span>
               </div>
-              <span className="text-xs font-normal opacity-90 mt-1 relative">残り5名 - お早めにどうぞ</span>
             </a>
           </div>
           
-          {/* 不安解消 */}
-          <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 mb-4 text-center">
-            <p className="text-xs text-slate-600 leading-relaxed">
-              <span className="text-primary font-medium">ご安心ください：</span>
-              相談しても何かを買う必要は一切ありません。<br />
-              合わなければいつでもブロックOK。リスクゼロです。
+          {/* 満足度・予約案内 */}
+          <div className="text-center mb-4">
+            <p className="text-sm text-slate-700 font-medium mb-1">
+              満足度98%の美肌ケア
+            </p>
+            <p className="text-xs text-slate-500">
+              ご予約枠が埋まりやすいため、お早めにご相談ください
             </p>
           </div>
           
@@ -454,7 +451,7 @@ export default function Home() {
             </div>
             
             <h3 className="text-lg text-slate-800 font-medium mb-2">
-              まだ間に合います。
+              まだ間に���います。
             </h3>
             <p className="text-slate-600 text-sm mb-4">
               悩み続けるより、プロに相談する方が早い。<br />
@@ -561,7 +558,7 @@ export default function Home() {
               </div>
               <h3 className="text-slate-800 font-medium mb-2">15年以上の実績</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                5,000件以上の相談実績で<br />あらゆる肌悩みに対応
+                5,000件以上の相談実績��<br />あらゆる肌悩みに対応
               </p>
             </div>
 
@@ -688,19 +685,17 @@ export default function Home() {
       </footer>
 
       {/* 固定CTAバー（モバイル） */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-900 to-slate-800 p-3 pb-5 md:hidden z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
-        <div className="flex items-center justify-between mb-2 px-1">
-          <div className="flex items-center gap-2">
-            <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">残り5名</span>
-            <span className="text-xs text-slate-300">今月限定</span>
-          </div>
-          <span className="text-xs text-slate-400">営業なし・ブロックOK</span>
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 pb-5 md:hidden z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <span className="text-xs text-slate-600">満足度98%</span>
+          <span className="text-slate-300">|</span>
+          <span className="text-xs text-slate-500">予約枠が埋まりやすいためお早めに</span>
         </div>
         <a href="#" className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-[#06C755] to-[#00B900] text-white rounded-xl font-bold shadow-[0_4px_20px_rgba(6,199,85,0.4)] active:scale-[0.98] transition-transform">
           <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
           </svg>
-          <span>今すぐ無料で相談する</span>
+          <span>LINEで無料相談する（30秒）</span>
         </a>
       </div>
     </main>
