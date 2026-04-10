@@ -173,40 +173,71 @@ export default function Home() {
           </div>
 
           {/* 3. 行動理由：今すぐ行動する理由 */}
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">残りわずか</span>
-              <span className="text-red-600 font-bold text-sm">今月限定キャンペーン</span>
+          <div className="bg-gradient-to-br from-red-50 to-amber-50 border-2 border-red-200 rounded-xl p-5 mb-6 relative overflow-hidden">
+            {/* 背景装飾 */}
+            <div className="absolute top-0 right-0 w-20 h-20 bg-red-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50" />
+            
+            <div className="relative">
+              {/* 緊急性ヘッダー */}
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">緊急</span>
+                <span className="text-red-600 font-bold">4月の無料枠</span>
+              </div>
+              
+              {/* 残り枠数（大きく表示） */}
+              <div className="text-center mb-3">
+                <span className="text-slate-600 text-sm">残り</span>
+                <span className="text-red-600 text-5xl font-bold mx-2">5</span>
+                <span className="text-slate-600 text-sm">名様</span>
+              </div>
+              
+              {/* 通常価格との比較 */}
+              <div className="bg-white rounded-lg p-3 mb-3 text-center">
+                <p className="text-xs text-slate-500 mb-1">通常価格 <span className="line-through">5,000円</span></p>
+                <p className="text-red-600 font-bold text-xl">今だけ無料</p>
+              </div>
+              
+              {/* 損失回避メッセージ */}
+              <p className="text-center text-xs text-slate-600 leading-relaxed">
+                このページを閉じると、次回は<span className="font-bold text-red-600">通常料金</span>になる可能性があります。<br />
+                <span className="font-medium">今すぐ枠を確保することをおすすめします。</span>
+              </p>
             </div>
-            <p className="text-center text-slate-700 text-sm">
-              通常5,000円の肌診断を<span className="text-red-600 font-bold text-lg">無料</span>でご提供
-            </p>
-            <div className="flex items-center justify-center gap-2 mt-3">
-              <span className="bg-red-100 text-red-700 font-bold text-sm px-3 py-1.5 rounded-full border border-red-200">
-                今月残り5名限定
-              </span>
-            </div>
-            <p className="text-center text-xs text-slate-500 mt-2">
-              ※ 定員に達し次第終了となります
-            </p>
           </div>
 
+          {/* 行動を促す一文 */}
+          <div className="text-center mb-4">
+            <p className="text-sm text-slate-700 font-medium">
+              1年後、<span className="text-primary">「あの時行動してよかった」</span>と思える自分へ。
+            </p>
+            <p className="text-xs text-slate-500 mt-1">
+              たった30秒の登録が、あなたの肌を変える第一歩です。
+            </p>
+          </div>
+          
           {/* CTA 1（強調） */}
+          <div className="mb-3">
+            <a href="#" className="group flex flex-col items-center justify-center w-full py-5 bg-gradient-to-r from-[#06C755] to-[#00B900] text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_8px_30px_rgba(6,199,85,0.4)] hover:shadow-[0_12px_40px_rgba(6,199,85,0.5)] hover:scale-[1.02] relative overflow-hidden">
+              {/* 光るエフェクト */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              
+              <div className="flex items-center gap-3 relative">
+                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                </svg>
+                <span>今すぐ無料で相談する</span>
+              </div>
+              <span className="text-xs font-normal opacity-90 mt-1 relative">残り5名 - お早めにどうぞ</span>
+            </a>
+          </div>
+          
+          {/* 不安解消 */}
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 mb-4 text-center">
             <p className="text-xs text-slate-600 leading-relaxed">
               <span className="text-primary font-medium">ご安心ください：</span>
-              相談したからといって、何かを買う必要は一切ありません。<br />
-              「まだ考え中」でも大丈夫。あなたのペースでどうぞ。
+              相談しても何かを買う必要は一切ありません。<br />
+              合わなければいつでもブロックOK。リスクゼロです。
             </p>
-          </div>
-          <div className="mb-3">
-            <a href="#" className="flex items-center justify-center gap-3 w-full py-5 bg-[#06C755] text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] animate-pulse-slow relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
-              <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-              </svg>
-              <span>無料でLINE相談する</span>
-            </a>
           </div>
           
           {/* 安心要素 */}
@@ -416,23 +447,32 @@ export default function Home() {
       {/* CTA 2（中間） */}
       <section className="w-full bg-white py-12">
         <div className="max-w-lg mx-auto px-5">
-          <div className="bg-slate-50 rounded-2xl p-6 text-center">
-            <p className="text-slate-600 text-sm mb-3">まずは気軽に相談してみませんか？</p>
-            <h3 className="text-lg text-slate-800 font-medium mb-4">
-              専門スタッフが<br />あなたの肌悩みに寄り添います
-            </h3>
+          <div className="bg-gradient-to-br from-slate-50 to-primary/5 rounded-2xl p-6 text-center border border-slate-200">
+            {/* 限定バッジ */}
+            <div className="inline-block bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full mb-4">
+              今月残り5名
+            </div>
             
-            {/* 不安を消す一言 */}
-            <div className="bg-white border border-slate-200 rounded-lg p-3 mb-5 text-left">
-              <p className="text-xs text-slate-500 leading-relaxed">
-                <span className="text-primary font-medium">ご安心ください：</span>
-                相談後に商品を購入する必要はありません。「まだ決められない」でも大丈夫。あなたのペースでお考えください。
+            <h3 className="text-lg text-slate-800 font-medium mb-2">
+              まだ間に合います。
+            </h3>
+            <p className="text-slate-600 text-sm mb-4">
+              悩み続けるより、プロに相談する方が早い。<br />
+              <span className="font-medium text-primary">最短2週間で変化を実感</span>する方も。
+            </p>
+            
+            {/* 行動を促す一文 */}
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-5">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                「もう少し考えてから...」と思っていませんか？<br />
+                <span className="font-medium text-amber-700">でも、肌の悩みは待ってくれません。</span><br />
+                今日の一歩が、3ヶ月後のあなたを変えます。
               </p>
             </div>
             
             <LineCTA />
             <p className="text-xs text-slate-500 mt-4">
-              24時間受付・平均返信時間30分以内
+              30秒で完了・24時間受付・営業一切なし
             </p>
           </div>
         </div>
@@ -568,45 +608,61 @@ export default function Home() {
       </section>
 
       {/* 最終CTA */}
-      <section className="w-full bg-white py-16">
+      <section className="w-full bg-slate-900 py-16">
         <div className="max-w-lg mx-auto px-5">
-          <div className="bg-gradient-to-br from-primary to-teal-600 rounded-2xl p-8 text-center text-white">
-            {/* 限定表示 */}
-            <div className="inline-block bg-white/20 backdrop-blur rounded-full px-4 py-1.5 mb-4">
-              <span className="text-sm font-medium">今月残り5名限定</span>
-            </div>
-            
+          <div className="text-center text-white mb-8">
+            <p className="text-slate-400 text-sm mb-2">最後にお伝えしたいこと</p>
             <h2 className="text-2xl font-medium mb-4 leading-tight">
-              あなたの肌悩み、<br />一緒に解決しましょう
+              「あの時、相談していれば...」<br />
+              <span className="text-primary">そう後悔しないために。</span>
             </h2>
-            <p className="text-sm opacity-90 mb-6 leading-relaxed">
-              5,847名以上の方が実感した<br />
-              専門スタッフによるパーソナルケア
-            </p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-primary to-teal-600 rounded-2xl p-6 text-center text-white relative overflow-hidden">
+            {/* 背景装飾 */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
             
-            {/* 不安を消す一言 */}
-            <div className="bg-white/15 backdrop-blur rounded-lg p-3 mb-6 text-left">
-              <p className="text-xs text-white/90 leading-relaxed">
-                <span className="font-medium">よくある不安：</span>
-                「LINEを登録したら、しつこく連絡が来るのでは？」<br />
-                → いいえ。必要な情報をお伝えした後は、ご連絡しません。<br />
-                合わないと思ったら、いつでもブロックOKです。
+            <div className="relative">
+              {/* 緊急性 */}
+              <div className="bg-white/20 backdrop-blur rounded-lg p-4 mb-5">
+                <p className="text-xs opacity-90 mb-1">4月の無料相談枠</p>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-4xl font-bold">残り5名</span>
+                </div>
+                <p className="text-xs opacity-80 mt-1">定員に達し次第、通常料金（5,000円）に戻ります</p>
+              </div>
+              
+              {/* 行動を促す一文 */}
+              <p className="text-sm opacity-95 mb-5 leading-relaxed">
+                肌の悩みは、放っておくと悪化します。<br />
+                <span className="font-medium">でも、今日行動すれば、未来は変わります。</span>
               </p>
-            </div>
-            
-            <a href="#" className="flex items-center justify-center gap-3 w-full py-4 bg-white text-[#06C755] rounded-lg font-medium hover:bg-slate-50 transition-all duration-300 shadow-lg mb-4">
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-              </svg>
-              <span className="text-lg">無料でLINE相談する</span>
-            </a>
-            
-            <div className="flex items-center justify-center gap-4 text-xs opacity-80">
-              <span>相談無料</span>
-              <span>•</span>
-              <span>24時間受付</span>
-              <span>•</span>
-              <span>営業なし</span>
+              
+              {/* CTAボタン */}
+              <a href="#" className="group flex flex-col items-center justify-center w-full py-5 bg-white text-[#06C755] rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] mb-4 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#06C755]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <div className="flex items-center gap-3 relative">
+                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                  </svg>
+                  <span>今すぐ無料で相談する</span>
+                </div>
+                <span className="text-xs font-normal text-slate-500 mt-1 relative">30秒で完了</span>
+              </a>
+              
+              {/* 安心要素 */}
+              <div className="flex items-center justify-center gap-4 text-xs opacity-80 mb-4">
+                <span>相談無料</span>
+                <span>•</span>
+                <span>営業一切なし</span>
+                <span>•</span>
+                <span>いつでもブロックOK</span>
+              </div>
+              
+              {/* 不安解消 */}
+              <p className="text-xs opacity-70">
+                ※ 相談したからといって、何かを購入する必要は一切ありません
+              </p>
             </div>
           </div>
         </div>
@@ -632,13 +688,16 @@ export default function Home() {
       </footer>
 
       {/* 固定CTAバー（モバイル） */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 pb-4 md:hidden z-50 shadow-lg">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="bg-red-100 text-red-600 text-xs font-medium px-2 py-0.5 rounded">残り5名</span>
-          <span className="text-xs text-slate-500">無理な勧誘なし・いつでもブロックOK</span>
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-900 to-slate-800 p-3 pb-5 md:hidden z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
+        <div className="flex items-center justify-between mb-2 px-1">
+          <div className="flex items-center gap-2">
+            <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">残り5名</span>
+            <span className="text-xs text-slate-300">今月限定</span>
+          </div>
+          <span className="text-xs text-slate-400">営業なし・ブロックOK</span>
         </div>
-        <a href="#" className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#06C755] text-white rounded-lg font-medium shadow-md">
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+        <a href="#" className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-[#06C755] to-[#00B900] text-white rounded-xl font-bold shadow-[0_4px_20px_rgba(6,199,85,0.4)] active:scale-[0.98] transition-transform">
+          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
           </svg>
           <span>今すぐ無料で相談する</span>
