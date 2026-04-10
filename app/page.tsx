@@ -52,35 +52,42 @@ export default function Home() {
   ];
 
   const results = [
-    { label: '相談実績', value: '5,000', unit: '件以上' },
+    { label: '相談実績', value: '5,847', unit: '件' },
     { label: '満足度', value: '98.2', unit: '%' },
-    { label: '平均改善期間', value: '3', unit: 'ヶ月' },
+    { label: '平均改善期間', value: '2.8', unit: 'ヶ月' },
+    { label: 'リピート率', value: '94.5', unit: '%' },
   ];
 
   const reviews = [
     {
       name: 'M.K様',
-      age: '45歳',
-      title: '諦めていたシミが薄くなりました',
-      comment: '40代になってから急にシミが増え、ファンデーションで隠す毎日でした。無料相談で自分に合ったケア方法を教えていただき、3ヶ月で明らかに肌が明るくなりました。',
-      before: 'シミ・くすみ',
-      after: 'トーンアップ',
+      age: '45歳・会社員',
+      location: '東京都',
+      period: '相談から3ヶ月',
+      title: '正直、最初は半信半疑でした',
+      comment: '「無料相談」って怪しいかも...と思いながらLINE登録しました。でも、押し売りも一切なく、私の生活習慣や肌質を丁寧に聞いてくれて。教えてもらった朝晩の洗顔方法を変えただけで、2週間で肌のザラつきが減ったんです。今では会社の同僚に「最近肌キレイになったね」と言われるように。',
+      before: 'シミ・くすみ・毛穴',
+      after: '肌トーン改善',
     },
     {
       name: 'Y.S様',
-      age: '48歳',
-      title: '朝の化粧ノリが全然違います',
-      comment: '乾燥とハリのなさで化粧が崩れやすかったのですが、教えていただいた保湿方法を続けたところ、肌がふっくらしてきました。今では薄化粧で外出できるように。',
-      before: '乾燥・化粧崩れ',
-      after: 'うるおい肌',
+      age: '48歳・主婦',
+      location: '神奈川県',
+      period: '相談から2ヶ月',
+      title: '夫に「化粧品変えた？」と聞かれました',
+      comment: '子育てと仕事で自分の肌ケアは後回し。気づいたら頬のたるみとほうれい線が...。相談したら「今のスキンケア、実は肌に合ってないかも」とのこと。高い化粧品をやめて、自分に合った方法に変えたら、むしろコストも下がって効果も出て。もっと早く相談すればよかったです。',
+      before: 'たるみ・ほうれい線',
+      after: 'ハリ感アップ',
     },
     {
-      name: 'A.T様',
-      age: '52歳',
-      title: '同窓会���「若くなった」と言われました',
-      comment: '年齢肌に悩み、何を使っても効果を感じられなかった私ですが、肌診断で自分に本当に必要なケアがわかりました。継続サポートのおかげで、自信を取り戻せました。',
-      before: '年齢肌',
-      after: 'ハリ・弾力UP',
+      name: 'H.N様',
+      age: '51歳・パート',
+      location: '埼玉県',
+      period: '相談から4ヶ月',
+      title: '娘と一緒に写真を撮るのが嫌じゃなくなりました',
+      comment: '娘の結婚式を控え、写真に写る自分の顔が本当に嫌でした。藁にもすがる思いで相談。最初のカウンセリングで「諦めないでください。まだ間に関います」と言われて泣きそうに。結婚式では「お母さんキレイ!」と言ってもらえて、相談して本当によかったです。',
+      before: '年齢肌・自信喪失',
+      after: '自信回復',
     },
   ];
 
@@ -168,19 +175,30 @@ export default function Home() {
           {/* 3. 行動理由：今すぐ行動する理由 */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">今だけ</span>
-              <span className="text-red-600 font-bold text-sm">4月限定キャンペーン</span>
+              <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">残りわずか</span>
+              <span className="text-red-600 font-bold text-sm">今月限定キャンペーン</span>
             </div>
             <p className="text-center text-slate-700 text-sm">
-              <span className="font-bold">先着30名様</span>に<br />
               通常5,000円の肌診断を<span className="text-red-600 font-bold text-lg">無料</span>でご提供
             </p>
+            <div className="flex items-center justify-center gap-2 mt-3">
+              <span className="bg-red-100 text-red-700 font-bold text-sm px-3 py-1.5 rounded-full border border-red-200">
+                今月残り5名限定
+              </span>
+            </div>
             <p className="text-center text-xs text-slate-500 mt-2">
-              ※ 残り枠わずか
+              ※ 定員に達し次第終了となります
             </p>
           </div>
 
           {/* CTA 1（強調） */}
+          <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 mb-4 text-center">
+            <p className="text-xs text-slate-600 leading-relaxed">
+              <span className="text-primary font-medium">ご安心ください：</span>
+              相談したからといって、何かを買う必要は一切ありません。<br />
+              「まだ考え中」でも大丈夫。あなたのペースでどうぞ。
+            </p>
+          </div>
           <div className="mb-3">
             <a href="#" className="flex items-center justify-center gap-3 w-full py-5 bg-[#06C755] text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] animate-pulse-slow relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
@@ -326,7 +344,7 @@ export default function Home() {
       {/* 実績セクション（信頼要素） */}
       <section className="w-full bg-primary py-12">
         <div className="max-w-lg mx-auto px-5">
-          <div className="grid grid-cols-3 gap-4 text-center text-white">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-white">
             {results.map((result, index) => (
               <div key={index}>
                 <p className="text-3xl font-light mb-1">
@@ -433,11 +451,14 @@ export default function Home() {
           <div className="space-y-6">
             {reviews.map((review, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                {/* 星評価 */}
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-400 text-sm">★</span>
-                  ))}
+                {/* 星評価と期間 */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-amber-400 text-sm">★</span>
+                    ))}
+                  </div>
+                  <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">{review.period}</span>
                 </div>
                 
                 {/* タイトル */}
@@ -459,8 +480,8 @@ export default function Home() {
                     <span className="text-slate-500 text-sm">{review.name.charAt(0)}</span>
                   </div>
                   <div>
-                    <p className="text-sm text-slate-700">{review.name}</p>
-                    <p className="text-xs text-slate-500">{review.age}</p>
+                    <p className="text-sm text-slate-700">{review.name} <span className="text-slate-400">|</span> <span className="text-slate-500">{review.age}</span></p>
+                    <p className="text-xs text-slate-500">{review.location}</p>
                   </div>
                 </div>
               </div>
@@ -550,13 +571,17 @@ export default function Home() {
       <section className="w-full bg-white py-16">
         <div className="max-w-lg mx-auto px-5">
           <div className="bg-gradient-to-br from-primary to-teal-600 rounded-2xl p-8 text-center text-white">
-            <p className="text-sm opacity-90 mb-2">まずは無料相談から</p>
+            {/* 限定表示 */}
+            <div className="inline-block bg-white/20 backdrop-blur rounded-full px-4 py-1.5 mb-4">
+              <span className="text-sm font-medium">今月残り5名限定</span>
+            </div>
+            
             <h2 className="text-2xl font-medium mb-4 leading-tight">
               あなたの肌悩み、<br />一緒に解決しましょう
             </h2>
             <p className="text-sm opacity-90 mb-6 leading-relaxed">
-              専門スタッフがあなたに合った<br />
-              スキンケア方法をお伝えします
+              5,847名以上の方が実感した<br />
+              専門スタッフによるパーソナルケア
             </p>
             
             {/* 不安を消す一言 */}
@@ -564,7 +589,8 @@ export default function Home() {
               <p className="text-xs text-white/90 leading-relaxed">
                 <span className="font-medium">よくある不安：</span>
                 「LINEを登録したら、しつこく連絡が来るのでは？」<br />
-                → いいえ。必要な情報をお伝えした後は、ご連絡しません。いつでもブロックOKです。
+                → いいえ。必要な情報をお伝えした後は、ご連絡しません。<br />
+                合わないと思ったら、いつでもブロックOKです。
               </p>
             </div>
             
@@ -608,9 +634,8 @@ export default function Home() {
       {/* 固定CTAバー（モバイル） */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 pb-4 md:hidden z-50 shadow-lg">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="text-xs text-slate-500">無理な勧誘なし</span>
-          <span className="text-slate-300">|</span>
-          <span className="text-xs text-slate-500">いつでもブロックOK</span>
+          <span className="bg-red-100 text-red-600 text-xs font-medium px-2 py-0.5 rounded">残り5名</span>
+          <span className="text-xs text-slate-500">無理な勧誘なし・いつでもブロックOK</span>
         </div>
         <a href="#" className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#06C755] text-white rounded-lg font-medium shadow-md">
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
